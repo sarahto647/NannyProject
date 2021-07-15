@@ -1,0 +1,31 @@
+﻿<Window x:Class="PLWPF.AllDetailsGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="AllDetailsGrid" Height="520.717" Width="586.226">
+    <Grid Background="{StaticResource MyBackround}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="208*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Nanny" Style="{StaticResource MyButtonStyle}" FontSize="20" Content="All Nanny" Grid.Column="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Nanny_Click" />
+        <Button x:Name="Mother" Style="{StaticResource MyButtonStyle}" FontSize="20" Content="All Mother" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Mother_Click"  />
+        <Button x:Name="Child" Style="{StaticResource MyButtonStyle}" FontSize="20" Content="All Children" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Child_Click" />
+        <Button x:Name="Contract" Style="{StaticResource MyButtonStyle}" FontSize="20" Content="All Contract" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Contract_Click"/>
+        <ContentControl Grid.Row="1" Grid.ColumnSpan="4">
+            <ContentControl.Content>
+                <DataGrid x:Name="ShowAll" IsReadOnly="True" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                </DataGrid>
+            </ContentControl.Content>
+        </ContentControl>
+    </Grid>
+</Window>

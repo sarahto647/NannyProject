@@ -1,0 +1,53 @@
+﻿<Window x:Class="PLWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="444.739" Width="618.252">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF94C8ED"/>
+                <GradientStop Color="#FFF7FBFD" Offset="0.852"/>
+                <GradientStop Color="#FFF5F5FD" Offset="0.999"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Nanny" Content="Nanny" Style="{StaticResource MyButtonStyle}"  
+        Margin="10,10,10.2,10" FontSize="30" Grid.Row="0" Click="Nanny_Click"/>
+
+        <Button x:Name="Mother" Content="Mother"  Style="{StaticResource MyButtonStyle}" 
+        Margin="10,10,10.2,10" FontSize="30" Click="Mother_Click" Grid.Row="1"/>
+
+        <Button x:Name="Child" Content="Child" Style="{StaticResource MyButtonStyle}"  
+        Margin="10,10,10.2,10" FontSize="30" Grid.Row="2" Click="Child_Click" />
+
+        <Button x:Name="Contract" Content="Contract"  Style="{StaticResource MyButtonStyle}" 
+        Margin="10,9,10.2,10" FontSize="30" Grid.Row="3" Grid.Column="0" Click="Contract_Click"/>
+
+        <Button x:Name="Linq" Content="Linq" Style="{StaticResource MyButtonStyle}" 
+         Margin="10" FontSize="30" Grid.Row="4" Grid.Column="0" Click="Linq_Click" />
+
+        <Button x:Name="Manager" Content="Manager" Style="{StaticResource MyButtonStyle}"  
+        Margin="10,9,10.2,9.8" FontSize="30" Grid.Row="5" Click="Manager_Click"/>
+
+        <Image Grid.Column="1"  Margin="10" Grid.RowSpan="4"  Source="Images/MaryPoppins.png"/>
+        <TextBlock x:Name="MarryPoppins" Grid.Column="1" Width="216" MouseEnter="MarryEnter" MouseLeave="MarryLeave" Text="Mary Poppins, Walt Disney 1964"  HorizontalAlignment="Center" Grid.Row="4"  VerticalAlignment="Top" Margin="62.4,10.4,28,0" MouseLeftButtonDown="GoToLink" FontFamily="Bell MT" />
+        <Button x:Name="EXIT" Content="EXIT" FontSize="20" Style="{StaticResource MyButtonStyle}"  Grid.Column="1" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Bottom" Width="104" Height="38" Click="EXIT_Click" Margin="0,0,10,9" />
+    </Grid>
+</Window>

@@ -1,0 +1,155 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.AllChild"
+        mc:Ignorable="d"
+        Title="Child Options" Height="453.587" Width="288.167" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="childViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Child}, CreateList=True}"/>
+        <local:NotBoleeanToVisibility     x:Key="notBooleanToVisibilityConverter" />
+    </Window.Resources>
+    <Grid Margin="0,0,3.2,0.2" Background="{StaticResource MyBackround}">
+        <TabControl HorizontalAlignment="Left" Background="Transparent" Height="421" VerticalAlignment="Top" Width="280" Margin="0,0,0,-0.4">
+            <TabItem Header="Add">
+                <Grid>
+                    <Grid x:Name="Addgrid1" VerticalAlignment="Top" Margin="3,3,10,0" Height="348" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Visibility="{Binding ElementName=hasAllergiesCheckBox,  Path=IsChecked,  Converter={StaticResource notBooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Allergies:"/>
+                        <TextBox x:Name="allergiesTextBox" Visibility="{Binding ElementName=hasAllergiesCheckBox,  Path=IsChecked,  Converter={StaticResource notBooleanToVisibilityConverter}}" Width="120" VerticalAlignment="Center" Text="{Binding Allergies, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                        <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Birth:"/>
+                        <DatePicker x:Name="dateBirthDatePicker" VerticalAlignment="Center" SelectedDate="{Binding DateBirth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+                        <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Gender Kid:"/>
+                        <ComboBox x:Name="genderKidComboBox" Width="120" VerticalAlignment="Center" SelectedItem="{Binding GenderKid}" Grid.Row="4" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                        <Label VerticalAlignment="Center" Grid.Row="5" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Has Allergies:"/>
+                        <CheckBox x:Name="hasAllergiesCheckBox"  VerticalAlignment="Center" Grid.Row="5" Margin="3" IsChecked="{Binding HasAllergies, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+                        <Label VerticalAlignment="Center" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="*Id:"/>
+                        <TextBox x:Name="idTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="*Mom:"/>
+                        <ComboBox x:Name="idMomComboBox" Width="120" VerticalAlignment="Center" Text="{Binding IdMom , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1" />
+                        <Label VerticalAlignment="Center" Grid.Row="7" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="In Diapers:"/>
+                        <CheckBox x:Name="inDiapersCheckBox" VerticalAlignment="Center" Grid.Row="7" Margin="3" IsChecked="{Binding InDiapers, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+                        <Label VerticalAlignment="Center" Grid.Row="8" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="In Need:"/>
+                        <CheckBox x:Name="inNeedCheckBox" VerticalAlignment="Center" Grid.Row="8" Margin="3" IsChecked="{Binding InNeed, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+                        <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="*Name:"/>
+                        <TextBox x:Name="nameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                        <Label Visibility="{Binding ElementName=inNeedCheckBox,  Path=IsChecked,  Converter={StaticResource notBooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Row="9" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Need List:"/>
+                        <TextBox x:Name="needListTextBox" Visibility="{Binding ElementName=inNeedCheckBox,  Path=IsChecked,  Converter={StaticResource notBooleanToVisibilityConverter}}" Width="120" VerticalAlignment="Center" Text="{Binding NeedList, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                        <Label VerticalAlignment="Center" Grid.Row="10" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Special Medication:"/>
+                        <CheckBox x:Name="specialMedicationCheckBox" VerticalAlignment="Center" Grid.Row="10" Margin="3" IsChecked="{Binding SpecialMedication, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+                    </Grid>
+                    <Button Name="Add"  Content="Add" HorizontalAlignment="Left" Margin="180,356,0,0" VerticalAlignment="Top" Width="84" Height="27" Click="Add_Click" >
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=nameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=idTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Update">
+                <Grid Height="370"  Margin="3,3,0.4,0" VerticalAlignment="Top">
+                    <Grid x:Name="updategrid2" Margin="3,4,0,47">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Allergies:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+                        <TextBox x:Name="allergiesTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding Allergies, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label Content="Date Birth:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+                        <DatePicker x:Name="dateBirthDatePicker1" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="2" SelectedDate="{Binding DateBirth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+                        <Label Content="Gender Kid:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="genderKidComboBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" SelectedItem="{Binding GenderKid}" VerticalAlignment="Center" Width="120" />
+                        <Label Content="Has Allergies:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+                        <CheckBox x:Name="hasAllergiesCheckBox1" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding HasAllergies, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+                        <Label Content="Child To Update:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="updateidComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3"  SelectedItem="{Binding Id}" VerticalAlignment="Center" Width="120" SelectionChanged="updateidComboBox_SelectionChanged_1" />
+                        <Label Content="In Diapers:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+                        <CheckBox x:Name="inDiapersCheckBox1" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding InDiapers, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+                        <Label Content="In Need:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+                        <CheckBox x:Name="inNeedCheckBox1" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding InNeed, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+                        <Label Content="Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+                        <TextBox x:Name="nameTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label Content="Need List:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="8" VerticalAlignment="Center"/>
+                        <TextBox x:Name="needListTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="8" Text="{Binding NeedList, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label Content="Special Medication:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
+                        <CheckBox x:Name="specialMedicationCheckBox1" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding SpecialMedication, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Button Name="Update" Content="Update" HorizontalAlignment="Left" Margin="177,323,0,0" VerticalAlignment="Top" Width="84" Height="27" Click="Update_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=nameTextBox1, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Remove">
+                <Grid>
+                    <Grid x:Name="grid3" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Height="40" Width="264">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Id:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="removeidComboBox" Grid.Column="1" DisplayMemberPath="Id" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3.4,5,-97.2,4.8" Grid.Row="0" VerticalAlignment="Center" Width="221">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel/>
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                    </Grid>
+                    <Label Content=" Choose which child would you like to remove?" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Width="254"/>
+                    <Button Name="Remove" Content="Remove" HorizontalAlignment="Left" Margin="105,132,0,0" VerticalAlignment="Top" Width="84" Click="Remove_Click" Height="27" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

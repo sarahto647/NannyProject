@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<childs>
+  <child>
+    <id>333</id>
+    <name>ttt</name>
+    <gender>male</gender>
+    <idMom>222</idMom>
+    <dateBirth>22/01/2017 00:00:00</dateBirth>
+    <inNeed>False</inNeed>
+    <needList></needList>
+    <hasAllergies>True</hasAllergies>
+    <allergies>gfdgfdg</allergies>
+    <specialMedication>False</specialMedication>
+    <inDiapers>False</inDiapers>
+    <hasNanny>False</hasNanny>
+  </child>
+  <child>
+    <id>444</id>
+    <name>uuu</name>
+    <gender>male</gender>
+    <idMom>222</idMom>
+    <dateBirth>01-Jan-17 00:00:00</dateBirth>
+    <inNeed>False</inNeed>
+    <needList></needList>
+    <hasAllergies>False</hasAllergies>
+    <allergies></allergies>
+    <specialMedication>False</specialMedication>
+    <inDiapers>True</inDiapers>
+    <hasNanny>True</hasNanny>
+  </child>
+  <child>
+    <id>666</id>
+    <name>yyyy</name>
+    <gender>male</gender>
+    <idMom>222</idMom>
+    <dateBirth>22/01/2017 00:00:00</dateBirth>
+    <inNeed>False</inNeed>
+    <needList></needList>
+    <hasAllergies>False</hasAllergies>
+    <allergies></allergies>
+    <specialMedication>False</specialMedication>
+    <inDiapers>False</inDiapers>
+    <hasNanny>True</hasNanny>
+  </child>
+  <child>
+    <id>3030303</id>
+    <name>yaron</name>
+    <gender>female</gender>
+    <idMom>303798110</idMom>
+    <dateBirth>23-Jan-16 00:00:00</dateBirth>
+    <inNeed>False</inNeed>
+    <needList></needList>
+    <hasAllergies>False</hasAllergies>
+    <allergies></allergies>
+    <specialMedication>False</specialMedication>
+    <inDiapers>False</inDiapers>
+    <hasNanny>True</hasNanny>
+  </child>
+  <child>
+    <id>22222222</id>
+    <name>yehoshua</name>
+    <gender>male</gender>
+    <idMom>303798110</idMom>
+    <dateBirth>23-Jul-17 00:00:00</dateBirth>
+    <inNeed>False</inNeed>
+    <needList></needList>
+    <hasAllergies>False</hasAllergies>
+    <allergies></allergies>
+    <specialMedication>False</specialMedication>
+    <inDiapers>False</inDiapers>
+    <hasNanny>False</hasNanny>
+  </child>
+  <child>
+    <id>666666</id>
+    <name>ronit</name>
+    <gender>female</gender>
+    <idMom>303798110</idMom>
+    <dateBirth>2017-01-01T00:00:00</dateBirth>
+    <inNeed>false</inNeed>
+    <needList />
+    <hasAllergies>false</hasAllergies>
+    <allergies />
+    <specialMedication>false</specialMedication>
+    <inDiapers>false</inDiapers>
+    <hasNanny>false</hasNanny>
+  </child>
+  <child>
+    <id>77777</id>
+    <name>shlomit</name>
+    <gender>female</gender>
+    <idMom>303798110</idMom>
+    <dateBirth>2018-01-01T00:00:00</dateBirth>
+    <inNeed>false</inNeed>
+    <needList />
+    <hasAllergies>true</hasAllergies>
+    <allergies>peanuts</allergies>
+    <specialMedication>true</specialMedication>
+    <inDiapers>false</inDiapers>
+    <hasNanny>false</hasNanny>
+  </child>
+</childs>

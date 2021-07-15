@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ArrayOfMother xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Mother>
+    <Id>222</Id>
+    <LastName>www</LastName>
+    <Name>www</Name>
+    <Address>yaffo, jerusalem, israel</Address>
+    <AddressArea>yaffo, jerusalem, israel</AddressArea>
+    <WantedDistance>7</WantedDistance>
+    <NeedNanny>
+      <boolean>true</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+    </NeedNanny>
+    <TempScheduel>2,7,02:00:00,00:00:00,00:00:00,00:00:00,00:00:00,00:00:00,00:00:00,03:30:00,00:00:00,00:00:00,00:00:00,00:00:00,00:00:00,00:00:00</TempScheduel>
+    <Smokes>false</Smokes>
+    <ReligionM>Jewish</ReligionM>
+    <ImportantReligion>false</ImportantReligion>
+    <NumberOfChildren>4</NumberOfChildren>
+    <LanguageMom>Hebrew</LanguageMom>
+  </Mother>
+  <Mother>
+    <Id>303798110</Id>
+    <LastName>levi</LastName>
+    <Name>rachel</Name>
+    <Address>nitza 8, netanya, Israel</Address>
+    <AddressArea>nitza 8, netanya, Israel</AddressArea>
+    <WantedDistance>0</WantedDistance>
+    <NeedNanny>
+      <boolean>true</boolean>
+      <boolean>false</boolean>
+      <boolean>true</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+      <boolean>false</boolean>
+    </NeedNanny>
+    <TempScheduel>2,7,05:30:00,00:00:00,06:30:00,00:00:00,00:00:00,00:00:00,00:00:00,10:00:00,00:00:00,18:30:00,00:00:00,00:00:00,00:00:00,00:00:00</TempScheduel>
+    <Smokes>false</Smokes>
+    <ReligionM>Jewish</ReligionM>
+    <ImportantReligion>false</ImportantReligion>
+    <NumberOfChildren>3</NumberOfChildren>
+    <LanguageMom>Hebrew</LanguageMom>
+  </Mother>
+</ArrayOfMother>

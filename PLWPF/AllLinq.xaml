@@ -1,0 +1,126 @@
+﻿<Window x:Class="PLWPF.AllLinq"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="AllLinq" Height="393.348" Width="563.948">
+    <Grid Background="{StaticResource MyBackround}">
+        <TabControl HorizontalAlignment="Left" Background="Transparent" Height="364" VerticalAlignment="Top" Width="558" Margin="0,0,-0.4,0">
+            <TabItem Header="Nanny Search">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="16*"/>
+                        <RowDefinition Height="51*"/>
+                        <RowDefinition Height="101*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Name="OptionGrid" HorizontalAlignment="Left" Grid.Row="1" Height="102" VerticalAlignment="Top" Width="552">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="MatchNanny" Content="Match Nanny" HorizontalAlignment="center" Margin="10,10,0,0" VerticalAlignment="Top" Width="83" Height="27" Click="MatchNanny_Click"/>
+                        <ComboBox x:Name="AllMotherMatchNanny" HorizontalAlignment="Center" Margin="32,72,23,0" VerticalAlignment="Top" Width="83"/>
+                        <Label Content="Mothers ID:" HorizontalAlignment="center" Margin="32,46,22,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.518,0.154"/>
+                        <Button x:Name="WithExp" Content="W/ Experience" Grid.Column="2" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="92" Height="27" Click="WithExp_Click"/>
+                        <Button x:Name="NannyWitheCar" Content="W/ Car" Grid.Column="3" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="NannyWitheCar_Click"/>
+                        <Button x:Name="ClosestMatch" Content="Closest Match" Grid.Column="1" HorizontalAlignment="Center" Margin="28,10,19,0" VerticalAlignment="Top" Width="91" Height="27" Click="ClosestMatch_Click"/>
+                        <Label Content="Mothers ID:" HorizontalAlignment="Center" Margin="28,46,26,0" VerticalAlignment="Top" Width="84" Grid.Column="1"/>
+
+                        <ComboBox x:Name="ClosestMatchCombo" Grid.Column="1" HorizontalAlignment="Center"   Text="{Binding IdMother, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="28,72,19,0" VerticalAlignment="Top" Width="91"/>
+                    </Grid>
+
+                    <Label Content="All The Nanny Options:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="157" Height="26"/>
+                    <ContentControl Grid.Row="2">
+                        <ContentControl.Content>
+                            <ListView x:Name="listNanny" Background="Transparent">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                            </ListView>
+                        </ContentControl.Content>
+                    </ContentControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Child Search">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="42*"/>
+                        <RowDefinition Height="105*"/>
+                        <RowDefinition Height="188*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="All child options:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="143"/>
+                    <Grid HorizontalAlignment="Left" Height="105" Margin="0,42,-0.2,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="553">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="276*"/>
+                            <ColumnDefinition Width="277*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="ChildNoNanny" Content="No Nanny" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Center" Width="140" Height="33" Click="ChildNoNanny_Click"/>
+                        <Button x:Name="HasAllergies" Content="Childs with Allergies" Grid.Column="1" HorizontalAlignment="Center" Margin="26,10,0,0" VerticalAlignment="Center" Width="122" Height="33" Click="HasAllergies_Click"/>
+                    </Grid>
+                    <ContentControl Grid.Row="2">
+                        <ContentControl.Content>
+                            <ListView x:Name="listChild" Background="Transparent">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                            </ListView>
+                        </ContentControl.Content>
+                    </ContentControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Grouping Search">
+
+                <Grid Background="{StaticResource MyBackround}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <ListView x:Name="listViewG" Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource MyBackround}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="2" BorderBrush="Blue" Margin="5">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Path=Key}" FontSize="16" Foreground="Red" TextAlignment="Center" />
+                                        <ListView ItemsSource="{Binding}">
+                                            <!--<ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:StudentTemplateUserControl>
+
+                                        </local:StudentTemplateUserControl>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>-->
+                                        </ListView>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button x:Name="GroupByAge" Content="Childs By Age" Grid.Column="1" HorizontalAlignment="Left" Margin="80,24,0,112" VerticalAlignment="Center"  Height="32"  Width="111" Click="GroupByAge_Click"/>
+                    <CheckBox x:Name="sortedA" Content="Sorted?" Grid.Column="1" HorizontalAlignment="Left" Margin="80,80,0,73" VerticalAlignment="Center" Width="123" IsChecked="False"/>
+                    <CheckBox x:Name="sortByA" Content="Sorted By Age?" Grid.Column="1" HorizontalAlignment="Left" Margin="80,100,0,0" VerticalAlignment="Top" IsChecked="False"/>
+                    <Button x:Name="Dist" Content="Distance" HorizontalAlignment="Left" Margin="90,24,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Distance_Click"/>
+                    <CheckBox x:Name="sortedD" Content="Sorted By Groups?" HorizontalAlignment="Left" Margin="90,80,0,0" VerticalAlignment="Top" IsChecked="False"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
